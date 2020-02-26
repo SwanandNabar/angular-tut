@@ -33,4 +33,12 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
+  /**
+   * this method will first update the hero in the HeroService and subscribe to the result of the service and then go back 
+   */
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }
+
 }
